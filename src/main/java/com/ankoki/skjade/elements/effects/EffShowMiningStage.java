@@ -94,8 +94,8 @@ public class EffShowMiningStage extends Effect {
             try {
                 Object position;
                 if (Utils.getServerMajorVersion() >= 19)
-                    position = blockPosition.getConstructor(int.class, int.class, int.class)
-                            .newInstance(location.getBlockX(), location.getBlockY(), location.getBlockZ());
+                    position = blockPosition.getConstructor(double.class, double.class, double.class)
+                        .newInstance(location.getX(), location.getY(), location.getZ());
                 else
                     position = blockPosition.getConstructor(double.class, double.class, double.class)
                         .newInstance(location.getX(), location.getY(), location.getZ());
